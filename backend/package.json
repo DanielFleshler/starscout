@@ -1,13 +1,25 @@
 {
-  "name": "backend",
+  "name": "starscout-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "StarScout backend API and workers",
+  "main": "src/api/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/api/server.js",
+    "dev": "nodemon src/api/server.js",
+    "worker": "node src/workers/start-worker.js",
+    "worker:dev": "nodemon src/workers/start-worker.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "keywords": ["github", "portfolio", "analysis"],
+  "author": "Daniel Fleshler",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
